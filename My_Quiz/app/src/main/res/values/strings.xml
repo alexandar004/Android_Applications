@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">My_Quiz</string>
+    <string name="question1">Yes or No (No is correct answer)</string>
+    <string name="question2">question2</string>
+    <string name="yes">yes</string>a
+    <string name="no">no</string>
+    <string name="is_the_car_red">Is the car red?</string>
+    <string name="image">image</string>
+    <string name="third_question">Enter your answer here</string>
+    <string name="submit">submit</string>
+</resources>
