@@ -26,6 +26,8 @@ class FourthQuestionActivity : BaseActivity() {
 
     override fun goToNextScreen() {
         val intent = Intent(this, GameOverActivity::class.java)
+            .putExtra("correctAnswer4", correctAnswers.toString())
+            .putExtra("quest4", numberOfQuestions.toString())
         startActivity(intent)
     }
 }

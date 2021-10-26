@@ -33,9 +33,9 @@ class MainActivity : BaseActivity() {
     }
 
     override fun goToNextScreen() {
-        val intent = Intent(this, ThirdQuestionActivity::class.java)
-            .putExtra("correctAnswer", correctAnswers.toString())
-            .putExtra("quest2", numberOfQuestions.toString())
+        val intent = Intent(this, SecondQuestionsActivity::class.java)
+            .putExtra("correctAnswer1", correctAnswers.toString())
+            .putExtra("quest1", numberOfQuestions.toString())
         startActivity(intent)
     }
 }

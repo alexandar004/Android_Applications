@@ -11,7 +11,6 @@ abstract class BaseActivity : AppCompatActivity() {
     lateinit var btnNo: Button
 
 
-
     protected open fun goToNextScreen() {
         val intent = Intent(this, SecondQuestionsActivity::class.java)
         startActivity(intent)

@@ -22,6 +22,8 @@ class ThirdQuestionActivity : BaseActivity() {
 
      override fun goToNextScreen() {
         val intent = Intent(this, FourthQuestionActivity::class.java)
+            .putExtra("correctAnswer3", correctAnswers.toString())
+            .putExtra("quest3", numberOfQuestions.toString())
         startActivity(intent)
     }
 }
