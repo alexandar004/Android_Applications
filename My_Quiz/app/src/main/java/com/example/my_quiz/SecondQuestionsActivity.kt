@@ -7,8 +7,6 @@ import android.widget.TextView
 class SecondQuestionsActivity : BaseActivity() {
     private var secondQuestion: TextView? = null
 
-
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)

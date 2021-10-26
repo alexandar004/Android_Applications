@@ -11,13 +11,10 @@ class GameOverActivity : BaseActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_game_over)
         printAllPoints()
-        printPoints = findViewById(R.id.point)
-        val point = intent.getStringExtra("point")
-        printPoints.text = "Your points $point"
     }
 
     private fun printAllPoints() {
         allCorrectAnswers += correctAnswers
-        println(allCorrectAnswers)
+        println("Your points: $allCorrectAnswers")
     }
 }
