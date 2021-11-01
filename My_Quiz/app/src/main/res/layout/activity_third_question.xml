@@ -6,9 +6,8 @@
     android:layout_height="match_parent"
     tools:context=".ThirdQuestionActivity">
 
-
     <TextView
-        android:id="@+id/third_question"
+        android:id="@+id/question_3"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:gravity="center"
@@ -18,13 +17,14 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <ImageView
+        android:id="@+id/car_image"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:contentDescription="@string/image"
         android:src="@drawable/images"
-        app:layout_constraintBottom_toTopOf="@+id/third_question"
+        app:layout_constraintBottom_toTopOf="@+id/question_3"
         app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        android:contentDescription="@string/image" />
+        app:layout_constraintRight_toRightOf="parent" />
 
     <Button
         android:id="@+id/btn_no"
@@ -34,6 +34,7 @@
         app:layout_constraintBottom_toBottomOf="parent" />
 
     <Button
+        android:id="@+id/btn_yes"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="@string/yes"

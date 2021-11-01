@@ -2,40 +2,32 @@ package com.example.my_quiz
 
 import android.content.Intent
 import android.os.Bundle
-import android.widget.TextView
 
 class MainActivity : BaseActivity() {
-    private var firstQuestion: TextView? = null
-
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-        getViews()
-        setClickListeners()
-        goToNextScreen()
-    }
-
-    private fun getViews() {
-        firstQuestion = findViewById(R.id.first_question)
+        getArgs()
         btnYes = findViewById(R.id.btn_yes)
         btnNo = findViewById(R.id.btn_no)
+        setClickListeners()
     }
 
     override fun setClickListeners() {
         btnYes.setOnClickListener {
-            goToNextScreen()
+            val intent = Intent(this, ThirdQuestionActivity::class.java)
+                .putExtra(Constants.ARG_QUESTION, numberOfQuestions)
+                .putExtra(Constants.ARG_CORRECT_ANSWERS, correctAnswers)
+            startActivity(intent)
+            numberOfQuestions++
         }
         btnNo.setOnClickListener {
+            numberOfQuestions++
             correctAnswers++
-            goToNextScreen()
+            val intent = Intent(this, ThirdQuestionActivity::class.java)
+                .putExtra(Constants.ARG_QUESTION, numberOfQuestions)
+                .putExtra(Constants.ARG_CORRECT_ANSWERS, correctAnswers)
+            startActivity(intent)
         }
-    }
-
-    override fun goToNextScreen() {
-        val intent = Intent(this, SecondQuestionsActivity::class.java)
-            .putExtra("correctAnswer1", correctAnswers.toString())
-            .putExtra("quest1", numberOfQuestions.toString())
-        startActivity(intent)
     }
 }

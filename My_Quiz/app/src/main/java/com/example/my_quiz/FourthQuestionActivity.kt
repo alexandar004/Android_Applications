@@ -5,29 +5,29 @@ import android.os.Bundle
 import android.widget.Button
 
 class FourthQuestionActivity : BaseActivity() {
+
     private var btnSubmit: Button? = null
-    private val CORRECT_ANSWER = "yes"
-    val name = intent.getStringExtra("nickname")
+    private val validAnswer = "yes"
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_fourth_question)
+        getArgs()
+        btnSubmit = findViewById(R.id.btn_submit)
+        setClickListeners()
     }
 
     override fun setClickListeners() {
         btnSubmit?.setOnClickListener {
-            if (name == CORRECT_ANSWER) {
-                correctAnswers++
-                goToNextScreen()
-            } else {
-                goToNextScreen()
-            }
+            goToNextScreen(yourAnswer = validAnswer)
+            numberOfQuestions++
+            correctAnswers++
         }
     }
-
-    override fun goToNextScreen() {
+    private fun goToNextScreen(yourAnswer: String) {
         val intent = Intent(this, GameOverActivity::class.java)
-            .putExtra("correctAnswer4", correctAnswers.toString())
-            .putExtra("quest4", numberOfQuestions.toString())
+        intent.putExtra("key", yourAnswer)
+            .putExtra(Constants.ARG_QUESTION, numberOfQuestions)
+            .putExtra(Constants.ARG_CORRECT_ANSWERS, correctAnswers)
         startActivity(intent)
     }
 }
