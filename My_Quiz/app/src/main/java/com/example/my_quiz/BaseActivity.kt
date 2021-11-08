@@ -4,14 +4,11 @@ import android.widget.Button
 import androidx.appcompat.app.AppCompatActivity
 
 abstract class BaseActivity : AppCompatActivity() {
-
-
     var correctAnswers = 0
     var numberOfQuestions = 0
 
     lateinit var btnYes: Button
     lateinit var btnNo: Button
-
 
     abstract fun setClickListeners()
 

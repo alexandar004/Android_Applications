@@ -9,4 +9,7 @@
     <string name="third_question">Enter your answer here(yes/no)    </string>
     <string name="submit">submit</string>
     <string name="play_again">play again</string>
+    <string name="question_5">This car is</string>
+    <string name="red_color">Red</string>
+    <string name="yellow_color">Yellow</string>
 </resources>

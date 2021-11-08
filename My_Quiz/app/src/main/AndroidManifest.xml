@@ -10,6 +10,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.My_Quiz">
         <activity
+            android:name=".FifthQuestionActivity"
+            android:exported="true" />
+        <activity
             android:name=".GameOverActivity"
             android:exported="true" />
         <activity
@@ -20,9 +23,6 @@
             android:exported="true" />
         <activity
             android:name=".ThirdQuestionActivity"
-            android:exported="true" />
-        <activity
-            android:name=".SecondQuestionsActivity"
             android:exported="true" />
         <activity
             android:name=".MainActivity"

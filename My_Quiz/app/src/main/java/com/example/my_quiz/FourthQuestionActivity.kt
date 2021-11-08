@@ -3,6 +3,7 @@ package com.example.my_quiz
 import android.content.Intent
 import android.os.Bundle
 import android.widget.Button
+import android.widget.EditText
 
 class FourthQuestionActivity : BaseActivity() {
 
@@ -18,13 +19,14 @@ class FourthQuestionActivity : BaseActivity() {
 
     override fun setClickListeners() {
         btnSubmit?.setOnClickListener {
-            goToNextScreen(yourAnswer = validAnswer)
+            goToNextScreen(validAnswer)
             numberOfQuestions++
             correctAnswers++
         }
     }
+
     private fun goToNextScreen(yourAnswer: String) {
-        val intent = Intent(this, GameOverActivity::class.java)
+        val intent = Intent(this, FifthQuestionActivity::class.java)
         intent.putExtra("key", yourAnswer)
             .putExtra(Constants.ARG_QUESTION, numberOfQuestions)
             .putExtra(Constants.ARG_CORRECT_ANSWERS, correctAnswers)
