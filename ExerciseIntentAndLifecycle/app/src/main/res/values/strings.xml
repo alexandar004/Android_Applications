@@ -1,6 +1,0 @@
-<resources>
-    <string name="app_name">Exercise Intent And Lifecycle</string>
-    <string name="username">Username</string>
-    <string name="password">password</string>
-    <string name="submit">submit</string>
-</resources>
