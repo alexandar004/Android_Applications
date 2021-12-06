@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">RecyclerView</string>
+    <string name="first_movie">first movie</string>
+    <string name="grade">grade:</string>
+    <dimen name="size28">28dp</dimen>
+    <dimen name="size144">144dp</dimen>
+    <dimen name="size6">6</dimen>
+    <dimen name="size24">24</dimen>
+    <dimen name="size128">128dp</dimen>
+</resources>
