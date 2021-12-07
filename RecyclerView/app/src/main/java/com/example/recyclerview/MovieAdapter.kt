@@ -13,18 +13,18 @@ class MovieAdapter() : RecyclerView.Adapter<MovieViewHolder>() {
     private lateinit var movieGenerator: MovieGenerator
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MovieViewHolder {
-        val itemView = LayoutInflater.from(parent.context).inflate(
-            R.layout.item_movie,
-            parent, false
-        )
+        val movieView =
+            LayoutInflater.from(parent.context).inflate(
+                R.layout.item_movie,
+                parent, false
+            )
 
-        return MovieViewHolder(itemView)
+        return MovieViewHolder(movieView)
     }
 
     override fun getItemCount(): Int = movieList.size
 
     override fun onBindViewHolder(holder: MovieViewHolder, position: Int) {
-        movieGenerator.generateMovieList()
         val movie = movieList[position]
         holder.bind(movie)
     }
@@ -39,11 +39,17 @@ class MovieAdapter() : RecyclerView.Adapter<MovieViewHolder>() {
 class MovieViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
     private val image: ImageView = itemView.findViewById(R.id.movie_image)
     private val title: TextView = itemView.findViewById(R.id.movie_title)
-//    val id: TextView = itemView.findViewById(R.id.movie_id)
-//    val year: TextView = itemView.findViewById(R.id.movie_year)
-//    val grade: TextView = itemView.findViewById(R.id.movie_grade)
+    private val id: TextView = itemView.findViewById(R.id.movie_id)
+    private val year: TextView = itemView.findViewById(R.id.movie_year)
+    private val grade: TextView = itemView.findViewById(R.id.movie_grade)
+    private val actors: TextView = itemView.findViewById(R.id.actors)
 
-        fun bind(movie: Movie) {
+    fun bind(movie: Movie) {
         title.text = movie.name
+        actors.text = movie.actors
+        image.setImageResource(movie.image)
+        id.text = movie.id.toString()
+        year.text = movie.year.toString()
+        grade.text = movie.grade.toString()
     }
 }

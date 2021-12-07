@@ -11,7 +11,7 @@ class MainActivity : AppCompatActivity() {
 
     private lateinit var recyclerView: RecyclerView
     private var adapter = MovieAdapter()
-    private var movieGenerator = MovieGenerator()
+    private val movieList = MovieGenerator().movieList
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -20,6 +20,6 @@ class MainActivity : AppCompatActivity() {
         recyclerView = findViewById(R.id.recycleView)
         recyclerView.layoutManager = LinearLayoutManager(this)
         recyclerView.adapter = adapter
-        adapter.setItems(movieGenerator.generateMovieList())
+        adapter.setItems(movieList)
     }
 }

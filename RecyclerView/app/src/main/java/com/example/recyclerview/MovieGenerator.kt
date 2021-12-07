@@ -8,11 +8,10 @@ class MovieGenerator {
     private val bayWatch = R.drawable.baywatch
     private val centralIntelligence = R.drawable.central_ntelligence
 
-
-    fun generateMovieList(): List<Movie> {
-        return listOf(
+    var movieList =
+        listOf(
             Movie(
-                twoAndHalfMan, 1, "Two and haf man", 2003, "Charlie Sheen, Jon Cryer",
+                twoAndHalfMan, 1, "Two and half man", 2003, "Charlie Sheen, Jon Cryer",
                 "...", 10
             ),
             Movie(
@@ -32,5 +31,4 @@ class MovieGenerator {
                 "Dwayne Douglas Johnson(The Rock)", "...", 9
             )
         )
-    }
 }
