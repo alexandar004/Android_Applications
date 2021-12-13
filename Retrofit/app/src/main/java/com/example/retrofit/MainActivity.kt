@@ -22,8 +22,8 @@ class MainActivity : AppCompatActivity() {
 
     private fun onGetQuoteClicked() {
        ApiClient.getInstance()?.getRandomQuote(object : ApiListener {
-            override fun onQuoteReceived(quote: String?) {
-                binding.txtQuote.text = quote
+            override fun onQuoteReceived(quote: Quote) {
+                binding.txtQuote.text = quote.getText()
             }
 
             override fun onFailure() {
