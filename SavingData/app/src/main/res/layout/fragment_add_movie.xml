@@ -23,11 +23,19 @@
         android:hint="@string/enter_year"
         app:layout_constraintTop_toBottomOf="@+id/edit_movie" />
 
+    <EditText
+        android:id="@+id/edt_grade"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="14dp"
+        android:hint="@string/grade"
+        app:layout_constraintTop_toBottomOf="@+id/edit_year" />
+
     <Button
-        android:id="@+id/add_movie_button"
+        android:id="@+id/btn_save"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/add_movie"
+        android:text="@string/save"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent" />

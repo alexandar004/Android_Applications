@@ -6,21 +6,18 @@ import com.example.savingdata.AppDatabase
 
 private const val DATABASE_NAME = "com.vsc.myapp.database"
 
-final class Database() {
+class Database() {
 
     private lateinit var instance: AppDatabase
-
 
     init {
 
     }
 
     fun getInstance(context: Context): AppDatabase {
-        if (instance == null) {
-            instance = Room.databaseBuilder(context, AppDatabase::class.java, DATABASE_NAME)
-                .fallbackToDestructiveMigration()
-                .build()
-        }
+        instance = Room.databaseBuilder(context, AppDatabase::class.java, DATABASE_NAME).build()
+//            .fallbackToDestructiveMigration()
+//            .build()
 
         return instance
     }

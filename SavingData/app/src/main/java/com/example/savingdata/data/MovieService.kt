@@ -3,25 +3,16 @@ package com.example.savingdata.data
 import android.content.Context
 import com.example.savingdata.MovieDao
 
-class MovieService//Todo: не съм сигурен дали правилно създавам обекта, защото в лекцията е final
-//    private final val movieDao: MovieDao? = null
+class MovieService
     (context: Context) {
 
-    private var movieDao: MovieDao = Database().getInstance(context).movieDao
+    private val movieDao: MovieDao = Database().getInstance(context).movieDao
 
-    fun getAllMovie(dataListener: DataListener<List<Movie>>): List<Movie> {
-
-        return movieDao.getAll()
+    suspend fun getAllMovie() {
+        movieDao.getAll()
     }
 
-    fun addMovie(movie: Movie){
-        return movieDao.insertMovie()
-    }
-
-}
-
-interface DataListener<T> {
-    fun onData(data: T) {
-
+    suspend fun addMovie(movie: Movie) {
+        movieDao.insertMovie(movie)
     }
 }

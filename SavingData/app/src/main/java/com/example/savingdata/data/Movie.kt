@@ -1,5 +1,6 @@
 package com.example.savingdata.data
 
+import android.widget.EditText
 import androidx.room.ColumnInfo
 import androidx.room.Entity
 import androidx.room.PrimaryKey
@@ -14,5 +15,6 @@ data class Movie(
 
     @ColumnInfo(name = "Year") val year: String,
 
-    @ColumnInfo(name = "Grade") val grade: Int
+    @ColumnInfo(name = "Grade") val grade: EditText
+
 )
