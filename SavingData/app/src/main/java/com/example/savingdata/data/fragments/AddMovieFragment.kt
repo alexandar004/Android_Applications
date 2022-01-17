@@ -30,7 +30,7 @@ class AddMovieFragment : Fragment() {
     ): View? {
         val view = inflater.inflate(R.layout.fragment_add_movie, container, false)
 
-        movieService = MovieService(requireContext())
+//        movieService = MovieService(requireContext())
 
         edtTitle = view.findViewById(R.id.movie_title)
         edtYear = view.findViewById(R.id.movie_year)
@@ -48,7 +48,7 @@ class AddMovieFragment : Fragment() {
             val year = edtYear.toString()
             val grade = edtGrade
 
-            val movie = Movie(id, name, year, grade)
+            val movie = Movie(title = name, year = year, grade = grade)
 
             with(movieService) {
                 viewLifecycleOwner.lifecycleScope.launch(Dispatchers.IO) {

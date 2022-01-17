@@ -8,6 +8,7 @@ import com.example.savingdata.data.Movie
 
 @Dao
 interface MovieDao {
+
     @Query("SELECT * FROM movies")
     suspend fun getAll(): List<Movie>
 
